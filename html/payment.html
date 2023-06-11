@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web - Payment</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/payment.css" />
+    <link
+      rel="stylesheet"
+      href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="../html/index.html"
+        ><img class="logo" src="../img/logo.jpg" alt=""
+      /></a>
+      <div>
+        <b class="hotline"
+          ><i class="fa-solid fa-square-phone fa-fade"></i>Hotline:
+          0919111152</b
+        >
+        <div class="color">
+          <div id="c1"></div>
+          <div id="c2"></div>
+          <div id="c3"></div>
+        </div>
+      </div>
+    </header>
+    <div class="menuphone" onclick="MenuToggle()">
+      <i class="bi bi-list"></i>
+    </div>
+    <nav id="menuu" class="active">
+      <a href="../html/index.html">Home</a>
+      <a href="">About</a>
+      <a href="">News</a>
+      <a href="#tourtrongnuoc">Tour trong nước</a>
+      <a href="#tourquocte">Tour quốc tế</a>
+      <a href="#footer">Contact</a>
+      <a href="../html/login.html"
+        ><i style="margin-right: 2px" class="bi bi-person-fill"></i>Login</a
+      >
+      <a href="../html/register.html"
+        ><i style="margin-right: 2px" class="bi bi-person"></i>Register</a
+      >
+      <a href="../html/payment.html"
+        ><i style="margin-right: 2px" class="bi bi-bag"></i>Cart</a
+      >
+    </nav>
+    <main class="containerr">
+      <h1 class="heading"><ion-icon name="bag-outline"></ion-icon>Cart</h1>
+      <div class="item-flex">
+        <section class="checkout">
+          <h2 class="section-heading">Payment Details</h2>
+          <div class="payment-form">
+            <div class="payment-method">
+              <button class="method selected">
+                <ion-icon name="card-outline"></ion-icon>
+                <span>Credit Card</span>
+                <ion-icon
+                  class="checkmark fill"
+                  name="checkmark-circle"
+                ></ion-icon>
+              </button>
+              <button class="method">
+                <ion-icon name="logo-paypal"></ion-icon>
+                <span>Paypal</span>
+                <ion-icon
+                  class="checkmark fill"
+                  name="checkmark-circle-outline"
+                ></ion-icon>
+              </button>
+            </div>
+            <form action="#">
+              <div class="cardholder-name">
+                <label for="cardholder-name" class="label-default"
+                  >Cardholder name</label
+                >
+                <input
+                  type="text"
+                  name="cardholder-name"
+                  id="cardholder-name"
+                  class="input-default"
+                />
+              </div>
+              <div class="card-number">
+                <label for="card-number" class="label-default"
+                  >Card number</label
+                >
+                <input
+                  type="number"
+                  name="card-number"
+                  id="card-number"
+                  class="input-default"
+                />
+              </div>
+              <div class="input-flex">
+                <div class="expire-date">
+                  <label for="expire-date" class="label-default"
+                    >Expiration date</label
+                  >
+                  <div class="input-flex">
+                    <input
+                      type="number"
+                      name="day"
+                      id="expire-date"
+                      placeholder="31"
+                      min="1"
+                      max="31"
+                      class="input-default"
+                    />
+                    <input
+                      type="number"
+                      name="month"
+                      id="expire-date"
+                      placeholder="12"
+                      min="1"
+                      max="12"
+                      class="input-default"
+                    />
+                  </div>
+                </div>
+                <div class="cvv">
+                  <label for="cvv" class="label-default">CVV</label>
+                  <input
+                    type="number"
+                    name="cvv"
+                    id="cvv"
+                    class="input-default"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <button class="btnnn btn-primary">
+            <b>Pay</b> <span id="payAmount">16.992.000</span>VNĐ
+          </button>
+        </section>
+
+        <section class="cart">
+          <div class="cart-item-box">
+            <h2 class="section-heading">Order Summary</h2>
+            <div class="product-card">
+              <div class="card">
+                <div class="img-box">
+                  <img
+                    width="80px"
+                    src="../img/Yao-Mao-Monument-in-Bokor-National-Park_1168373833.jpg"
+                    alt=""
+                    class="product-img"
+                  />
+                </div>
+
+                <div class="detail">
+                  <h4 class="product-name">
+                    Campuchia: Siem Reap - Phnom Penh
+                  </h4>
+                  <div class="wrapper">
+                    <div class="product-qty">
+                      <button id="decrement">
+                        <ion-icon name="remove-outline"></ion-icon>
+                      </button>
+                      <span id="quantity">1</span>
+                      <button id="increment">
+                        <ion-icon name="add-outline"></ion-icon>
+                      </button>
+                    </div>
+                    <div class="price">
+                      <span id="price">4.990.000</span> VNĐ
+                    </div>
+                  </div>
+                </div>
+
+                <button class="product-close-btn">
+                  <ion-icon name="close-outline"></ion-icon>
+                </button>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="card">
+                <div class="img-box">
+                  <img
+                    width="80px"
+                    src="../img/Thung-si-muong_460163110.jpg"
+                    alt=""
+                    class="product-img"
+                  />
+                </div>
+
+                <div class="detail">
+                  <h4 class="product-name">Lào</h4>
+                  <div class="wrapper">
+                    <div class="product-qty">
+                      <button id="decrement">
+                        <ion-icon name="remove-outline"></ion-icon>
+                      </button>
+                      <span id="quantity">1</span>
+                      <button id="increment">
+                        <ion-icon name="add-outline"></ion-icon>
+                      </button>
+                    </div>
+                    <div class="price">
+                      <span id="price">12.000.000</span> VNĐ
+                    </div>
+                  </div>
+                </div>
+
+                <button class="product-close-btn">
+                  <ion-icon name="close-outline"></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="wrapper">
+            <div class="discount-token">
+              <label for="discount-token" class="label-default"
+                >Giftcard/Voucher</label
+              >
+              <div class="wrapper-flex">
+                <input
+                  type="text"
+                  name="discount-token"
+                  id="discount-token"
+                  class="input-default"
+                />
+                <button class="btnnn btn-outline">Apply</button>
+              </div>
+            </div>
+
+            <div class="amount">
+              <div class="subtotal">
+                <span>Subtotal</span> <span id="subtotall">16.990.000</span> VNĐ
+              </div>
+              <div class="tax"><span>Tax</span> <span id="taxx">2</span>%</div>
+              <div class="shipping">
+                <span>Shipping</span> <span id="shippingg">0</span> VNĐ
+              </div>
+              <div class="total">
+                <span>Total</span> <span id="totall">16.992.000</span> VNĐ
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <br />
+    <footer>
+      <section class="footer-column">
+        <div>
+          <h2>Liên hệ</h2>
+          <hr />
+          <p>Phường Tân Chánh Hiệp, Q.12, TP.HCM</p>
+          <p>Email: hoaplse151404@fpt.edu.vn</p>
+          <p>Phone: 0919212115</p>
+          <p>MST: 0311854004</p>
+          <p>GPKD số: 79-400/2023/TCDL</p>
+        </div>
+      </section>
+      <section class="footer-column">
+        <div>
+          <h2>Bản đồ</h2>
+          <hr />
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.4435801915715!2d106.62350817469832!3d10.853827289299687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752b684ce076f3%3A0x4da1cf0078f423fa!2zRlBUIFBvbHl0ZWNobmljIEjhu5MgQ2jDrSBNaW5oIC0gVG_DoCBU!5e0!3m2!1svi!2s!4v1685277526668!5m2!1svi!2s"
+            frameborder="0"
+            width="100%"
+            height="150"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </section>
+      <section class="footer-column">
+        <div>
+          <h2>Kết nối</h2>
+          <hr />
+          <div class="social-icons">
+            <i class="bi-facebook"></i>
+            <i class="bi-youtube"></i>
+            <i class="bi-instagram"></i>
+          </div>
+          <p></p>
+          <div class="subscribe">
+            <input type="text" placeholder="Nhập email" />
+            <button class="btn">Đăng ký</button>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <img src="../img/zalo.svg" width="55px" height="55px" alt="" class="zalo" />
+    <img src="../img/messenger.svg" height="55px" alt="" class="messenger" />
+  </body>
+  <script>
+    var c1 = document.getElementById("c1");
+    var c2 = document.getElementById("c2");
+    var c3 = document.getElementById("c3");
+
+    const root = document.querySelector(":root");
+
+    c1.addEventListener("click", function () {
+      root.style.setProperty("--color2", "#009943");
+      localStorage.setItem("pickColor", "#009943");
+    });
+
+    c2.addEventListener("click", function () {
+      root.style.setProperty("--color2", "#e2bb10");
+      localStorage.setItem("pickColor", "#e2bb10");
+    });
+
+    c3.addEventListener("click", function () {
+      root.style.setProperty("--color2", "#0fe3ea");
+      localStorage.setItem("pickColor", "#0fe3ea");
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      loadTheme();
+    });
+
+    function loadTheme() {
+      if (localStorage.getItem("pickColor") !== null) {
+        root.style.setProperty("--color2", localStorage.getItem("pickColor"));
+      }
+    }
+  </script>
+  <script src="../js/payment.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script
+    src="https://kit.fontawesome.com/3df71dbc0d.js"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+</html>
